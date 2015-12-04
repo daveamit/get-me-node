@@ -62,6 +62,7 @@ echo '--------------------------------------------------------------------------
 curl https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh | bash
 source ~/.profile
 clear
+exit
 
 echo '------------------------------------------------------------------------------'
 echo 'Installing common node version, 5.1.0, 5.0.0 and 0.12.7!'
