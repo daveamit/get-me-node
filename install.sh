@@ -68,9 +68,30 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 echo '------------------------------------------------------------------------------'
-echo 'Installing common node version, 5.1.0, 5.0.0 and 0.12.7!'
+echo 'Installing common node versions ...'
 echo '------------------------------------------------------------------------------'
-sh -c "$(nvm install 5.1.1 && nvm use 5.1.1 && npm install -g npm)"
+echo 'Node 5.1.0'
+nvm install 5.1.0
+nvm use 5.1.0
+npm install -g npm
+echo 'Node 5.0.0'
+nvm install 5.0.0
+nvm use 5.0.0
+npm install -g npm
+echo 'Node 0.12.7'
+nvm install 0.12.7
+nvm use 0.12.7
+npm install -g npm
+echo 'Selecting 5.0.0'
+nvm use 5.0.0
+echo '------------------------------------------------------------------------------'
+echo 'Installing node based tools used for development ...'
+echo '------------------------------------------------------------------------------'
 
+npm install -g bower gulp yo generator-gulp-angular
+
+echo '------------------------------------------------------------------------------'
+echo 'We are done with installing stuff, firing off docky! Have fun ... happy coding!!'
+echo '------------------------------------------------------------------------------'
 
  
