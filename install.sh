@@ -88,7 +88,7 @@ echo '--------------------------------------------------------------------------
 echo 'Installing node based tools used for development ...'
 echo '------------------------------------------------------------------------------'
 
-npm install -g bower gulp yo generator-gulp-angular
+npm install -g bower gulp yo generator-gulp-angular nodemon generator-express
 
 echo '------------------------------------------------------------------------------'
 echo 'We are done with installing stuff, firing off docky! Have fun ... happy coding!!'
