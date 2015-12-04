@@ -30,7 +30,7 @@ then
   echo 'Atom already downloaded.!'
   echo '------------------------------------------------------------------------------'
   read -p "Do you wish to force download latest version of atom from atom.io? Enter No to install from downloaded version or Yes to download latest version: [Yes/No] " yn
-  if[$yn = "Yes"]
+  if[$yn == "Yes"]
   then
       clear
       echo '------------------------------------------------------------------------------'
