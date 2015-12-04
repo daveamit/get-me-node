@@ -30,7 +30,7 @@ then
   echo 'Atom already downloaded.!'
   echo '------------------------------------------------------------------------------'
   read -p "Do you wish to force download latest version of atom from atom.io? Enter No to install from downloaded version or Yes to download latest version: [Yes/No] " yn
-  if[ $yn == "Yes" ]
+  if [ $yn == "Yes" ]
   then
       clear
       echo '------------------------------------------------------------------------------'
@@ -47,13 +47,28 @@ else
   echo 'Downloading atom!'
   echo '------------------------------------------------------------------------------'
 curl -o ~/.atom.deb "$(curl -fsSl https://atom.io/download/deb  | grep -o '<a .*href=.*>' | sed -e 's/<a /\n<a /g' | sed -e 's/<a .*href=['"'"'"]//' -e 's/["'"'"'].*$//' -e '/^$/ d')"
-fi
 clear
+fi
+
 echo '------------------------------------------------------------------------------'
 echo 'Installing atom!'
 echo '------------------------------------------------------------------------------'
 sudo dpkg -i ~/.atom.deb
+clear
 
+echo '------------------------------------------------------------------------------'
+echo 'Installing nvm!'
+echo '------------------------------------------------------------------------------'
+curl https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh | bash
+source ~/.profile
+clear
+
+echo '------------------------------------------------------------------------------'
+echo 'Installing common node version, 5.1.0, 5.0.0 and 0.12.7!'
+echo '------------------------------------------------------------------------------'
+nvm install 5.1.1
+nvm use 5.1.1
+npm install -g npm
 
 
  
