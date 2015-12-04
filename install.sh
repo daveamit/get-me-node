@@ -18,6 +18,6 @@ echo '--------------------------------------------------------------------------
 sudo apt-get -y install build-essential libssl-dev git zsh docky
 
 echo '------------------------------------------------------------------------------'
-echo 'Installing most awesomest of all shells - Oh-My-ZSH!
+echo 'Installing most awesomest of all shells - Oh-My-ZSH!'
 echo '------------------------------------------------------------------------------'
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
