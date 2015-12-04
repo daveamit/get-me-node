@@ -23,7 +23,7 @@ echo 'Installing most awesomest of all shells - Oh-My-ZSH!'
 echo '------------------------------------------------------------------------------'
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-if [ -f "~/.atom.deb" ]
+if [ -f ~/.atom.deb ]
 then
   clear
   echo '------------------------------------------------------------------------------'
