@@ -64,6 +64,9 @@ source ~/.profile
 clear
 
 
+export NVM_DIR="~/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
 echo '------------------------------------------------------------------------------'
 echo 'Installing common node version, 5.1.0, 5.0.0 and 0.12.7!'
 echo '------------------------------------------------------------------------------'
