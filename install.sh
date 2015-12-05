@@ -104,6 +104,6 @@ echo 'Starting docky ...'
 (docky)
 echo 'docky started'
 echo 'Starting mongodb ...'
-(mongod)
+(mongod --smallfiles)
 echo 'mongodb started, use mongo command to connect to it'
 
