@@ -62,7 +62,14 @@ if ! type "$atom" > /dev/null; then
     echo '------------------------------------------------------------------------------'
     apm install auto-indent css-color-underline git-plus merge-conflicts turbo-javascript angularjs-styleguide-snippets color-picker file-type-icons
 else
-echo 'Atom already installed'  
+echo 'Atom already installed, although trying to install package'
+
+    echo '------------------------------------------------------------------------------'
+    echo 'Installing atom packages!'
+    echo '------------------------------------------------------------------------------'
+    apm install auto-indent css-color-underline git-plus merge-conflicts turbo-javascript angularjs-styleguide-snippets color-picker file-type-icons
+
+
 fi
 
 echo '------------------------------------------------------------------------------'
