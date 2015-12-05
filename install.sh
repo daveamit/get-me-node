@@ -29,7 +29,7 @@ echo '--------------------------------------------------------------------------
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 #see if atom is installed
-if ! type "$atom" > /dev/null; then
+if ! type "atom" > /dev/null; then
 
     if [ -f ~/.atom.deb ]
     then
