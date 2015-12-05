@@ -96,14 +96,15 @@ echo '--------------------------------------------------------------------------
 
 npm install -g bower gulp yo generator-gulp-angular nodemon generator-express
 
-echo '------------------------------------------------------------------------------'
-echo 'We are done with installing stuff, firing off docky! Have fun ... happy coding!!'
-echo '------------------------------------------------------------------------------'
-
 echo 'Starting docky ...'
 (setsid docky)
 echo 'docky started'
 echo 'Starting mongodb ...'
 (setsid mongod --smallfiles)
 echo 'mongodb started, use mongo command to connect to it'
+
+echo '------------------------------------------------------------------------------'
+echo 'We are done with installing stuff, firing off docky! Have fun ... happy coding!!'
+echo '------------------------------------------------------------------------------'
+echo 'More cool stuff waiting for you at https://oddcode.daveamit.com  --  Dave Amit'
 
