@@ -12,10 +12,10 @@ echo '--------------------------------------------------------------------------
 sudo apt-get -y upgrade
 clear
 echo '------------------------------------------------------------------------------'
-echo 'Awesome! Installing few packages which we'll need
+echo 'Awesome! Installing few packages which we'll need (including mongodb)
 echo '------------------------------------------------------------------------------'
 
-sudo apt-get -y install build-essential libssl-dev git zsh docky
+sudo apt-get -y install build-essential libssl-dev git zsh docky mongodb
 
 clear
 echo '------------------------------------------------------------------------------'
