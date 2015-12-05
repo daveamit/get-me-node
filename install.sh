@@ -28,37 +28,42 @@ echo 'Installing most awesomest of all shells - Oh-My-ZSH!'
 echo '------------------------------------------------------------------------------'
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-if [ -f ~/.atom.deb ]
-then
-  echo '------------------------------------------------------------------------------'
-  echo 'Atom already downloaded.!'
-  echo '------------------------------------------------------------------------------'
-  read -p "Do you wish to force download latest version of atom from atom.io? Enter No to install from downloaded version or Yes to download latest version: [Yes/No] " yn
-  if [ $yn == "Yes" ]
-  then
+#see if atom is installed
+if ! type "$atom" > /dev/null; then
+
+    if [ -f ~/.atom.deb ]
+    then
+      echo '------------------------------------------------------------------------------'
+      echo 'Atom already downloaded.!'
+      echo '------------------------------------------------------------------------------'
+      read -p "Do you wish to force download latest version of atom from atom.io? Enter No to install from downloaded version or Yes to download latest version: [Yes/No] " yn
+      if [ $yn == "Yes" ]
+      then
+          echo '------------------------------------------------------------------------------'
+          echo 'Downloading atom!'
+          echo '------------------------------------------------------------------------------'
+          curl -o ~/.atom.deb "$(curl -fsSl https://atom.io/download/deb  | grep -o '<a .*href=.*>' | sed -e 's/<a /\n<a /g' | sed -e 's/<a .*href=['"'"'"]//' -e 's/["'"'"'].*$//' -e '/^$/ d')"
+      else
+          echo 'not downloading from atom.io, using chached copy'
+      fi
+    else
       echo '------------------------------------------------------------------------------'
       echo 'Downloading atom!'
       echo '------------------------------------------------------------------------------'
       curl -o ~/.atom.deb "$(curl -fsSl https://atom.io/download/deb  | grep -o '<a .*href=.*>' | sed -e 's/<a /\n<a /g' | sed -e 's/<a .*href=['"'"'"]//' -e 's/["'"'"'].*$//' -e '/^$/ d')"
-  else
-      echo 'not downloading from atom.io, using chached copy'
-  fi
+    fi
+    
+    echo '------------------------------------------------------------------------------'
+    echo 'Installing atom!'
+    echo '------------------------------------------------------------------------------'
+    sudo dpkg -i ~/.atom.deb
+    echo '------------------------------------------------------------------------------'
+    echo 'Installing atom packages!'
+    echo '------------------------------------------------------------------------------'
+    apm install auto-indent css-color-underline git-plus merge-conflicts turbo-javascript angularjs-styleguide-snippets color-picker file-type-icons
 else
-  
-  echo '------------------------------------------------------------------------------'
-  echo 'Downloading atom!'
-  echo '------------------------------------------------------------------------------'
-curl -o ~/.atom.deb "$(curl -fsSl https://atom.io/download/deb  | grep -o '<a .*href=.*>' | sed -e 's/<a /\n<a /g' | sed -e 's/<a .*href=['"'"'"]//' -e 's/["'"'"'].*$//' -e '/^$/ d')"
+echo 'Atom already installed'  
 fi
-
-echo '------------------------------------------------------------------------------'
-echo 'Installing atom!'
-echo '------------------------------------------------------------------------------'
-sudo dpkg -i ~/.atom.deb
-echo '------------------------------------------------------------------------------'
-echo 'Installing atom packages!'
-echo '------------------------------------------------------------------------------'
-apm install auto-indent css-color-underline git-plus merge-conflicts turbo-javascript angularjs-styleguide-snippets color-picker file-type-icons
 
 echo '------------------------------------------------------------------------------'
 echo 'Installing nvm!'
