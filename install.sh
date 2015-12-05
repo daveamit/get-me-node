@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo '------------------------------------------------------------------------------'
-echo 'Sit back and relax while we setup node and related stuff to your machine'
+echo 'Sit back and relax while we setup node and related stuff on your machine'
 echo '------------------------------------------------------------------------------'
 
 sudo apt-get -y update
