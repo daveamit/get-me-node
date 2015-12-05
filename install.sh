@@ -101,9 +101,9 @@ echo 'We are done with installing stuff, firing off docky! Have fun ... happy co
 echo '------------------------------------------------------------------------------'
 
 echo 'Starting docky ...'
-(docky)
+(setsid docky)
 echo 'docky started'
 echo 'Starting mongodb ...'
-(mongod --smallfiles)
+(setsid mongod --smallfiles)
 echo 'mongodb started, use mongo command to connect to it'
 
