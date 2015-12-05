@@ -17,6 +17,12 @@ echo '--------------------------------------------------------------------------
 
 sudo apt-get -y install build-essential libssl-dev git zsh docky mongodb
 
+#setting up mongodb data directory. I'll give it 777 access as its just dev machine, will never do so in prod env.
+mkdir /data
+mkdir /data/db
+chmod 777 /data -Rrf
+
+
 clear
 echo '------------------------------------------------------------------------------'
 echo 'Installing most awesomest of all shells - Oh-My-ZSH!'
@@ -94,4 +100,10 @@ echo '--------------------------------------------------------------------------
 echo 'We are done with installing stuff, firing off docky! Have fun ... happy coding!!'
 echo '------------------------------------------------------------------------------'
 
-docky
+echo 'Starting docky ...'
+(docky)
+echo 'docky started'
+echo 'Starting mongodb ...'
+(mongod)
+echo 'mongodb started, use mongo command to connect to it'
+
