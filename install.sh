@@ -15,7 +15,7 @@ echo '--------------------------------------------------------------------------
 echo 'Awesome! Installing few packages which we will need (including mongodb)'
 echo '------------------------------------------------------------------------------'
 
-sudo apt-get -y install build-essential libssl-dev git zsh docky mongodb
+sudo apt-get -y install tree build-essential libssl-dev git zsh docky mongodb
 
 #setting up mongodb data directory. I'll give it 777 access as its just dev machine, will never do so in prod env.
 mkdir /data
