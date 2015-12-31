@@ -18,9 +18,9 @@ echo '--------------------------------------------------------------------------
 sudo apt-get -y install tree build-essential libssl-dev git zsh docky mongodb
 
 #setting up mongodb data directory. I'll give it 777 access as its just dev machine, will never do so in prod env.
-mkdir /data
-mkdir /data/db
-chmod 777 /data -Rrf
+sudo mkdir /data
+sudo mkdir /data/db
+sudo chmod 777 /data -Rrf
 
 
 echo '------------------------------------------------------------------------------'
@@ -105,12 +105,7 @@ echo '--------------------------------------------------------------------------
 
 npm install -g bower gulp yo generator-gulp-angular nodemon generator-express
 
-echo 'Starting docky ...'
-(setsid docky)
-echo 'docky started'
-echo 'Starting mongodb ...'
-(setsid mongod --smallfiles)
-echo 'mongodb started, use mongo command to connect to it'
+echo 'use *docky* command to start docky and *mongod* command to start mongodb server, use mongo command to connect to it'
 
 echo '------------------------------------------------------------------------------'
 echo 'We are done with installing stuff, firing off docky! Have fun ... happy coding!!'
