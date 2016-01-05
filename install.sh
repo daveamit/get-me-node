@@ -20,7 +20,7 @@ sudo apt-get -y install tree build-essential libssl-dev git zsh docky mongodb
 #setting up mongodb data directory. I'll give it 777 access as its just dev machine, will never do so in prod env.
 sudo mkdir /data
 sudo mkdir /data/db
-sudo chmod 777 /data -Rrf
+sudo chmod 777 /data -R
 
 
 echo '------------------------------------------------------------------------------'
